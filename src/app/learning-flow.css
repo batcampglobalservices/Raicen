@@ -1,0 +1,28 @@
+.flow-lede{font-size:17px;line-height:1.7;color:#4b6257;max-width:650px;margin:16px 0 30px}
+.teaching-copy ol,.teaching-copy ul{padding-left:22px;list-style:revert;line-height:1.8;margin:14px 0;color:#28493a}
+.teaching-copy li{margin:10px 0}.teaching-copy p{white-space:normal;margin:10px 0}
+.teaching-copy h1,.teaching-copy h2,.teaching-copy h3{font-size:18px;margin:16px 0 8px;font-weight:600}
+.tutor-question{background:#edf5ef;padding:12px;border-radius:8px}
+.flow-note{font-size:13px;color:#586b62;line-height:1.7;margin-top:28px}
+.flow-link{display:inline-flex;align-items:center;text-decoration:none;justify-content:center}
+.flow-panel{max-width:520px;margin:50px auto;padding:32px;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.flow-panel h1,.page h1,.practice-shell h1{font-size:clamp(30px,4vw,44px);letter-spacing:-.04em;line-height:1.2;margin:12px 0 20px}
+.flow-panel p{line-height:1.7}.flow-panel form{display:grid;gap:20px;margin:24px 0}
+.flow-panel label{display:grid;gap:8px;font-size:14px}.flow-panel input{border:1px solid #a9bdb0;border-radius:8px;padding:12px;font:inherit;width:100%}
+.flow-panel .text-button{margin-top:18px}
+.subject-card h2{font:500 28px/1.25 Georgia,serif;margin:10px 0 20px}
+.subject-card ul{font-size:14px;line-height:1.7;padding-left:20px;color:#4b6257;min-height:110px;list-style:disc}
+.flow-error{padding:14px 18px;border:1px solid #d58c76;background:#fff0eb;border-radius:8px;color:#883e2c;line-height:1.6}
+.flow-error button{text-decoration:underline}.flow-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:24px 0}
+.practice-shell{max-width:780px;padding:32px 24px 80px;margin:auto}
+.practice-shell .back-link{display:inline-block;margin-bottom:30px}
+.practice-shell progress{width:100%;height:8px;accent-color:var(--green);margin:20px 0}
+.practice-question{border:0;padding:0;margin:24px 0}
+.practice-question legend{font-size:23px;line-height:1.5;margin-bottom:20px;font-weight:500;white-space:pre-wrap}
+.practice-option{display:flex;align-items:center;gap:14px;padding:18px;border:1px solid #b5c9bc;border-radius:10px;background:var(--paper);margin:12px 0;cursor:pointer;font-size:16px}
+.practice-option.chosen{border:2px solid #276b54;background:#e9f2eb;padding:17px}.practice-option input{accent-color:var(--green)}
+.review-card{padding:24px;background:var(--paper);border:1px solid var(--line);border-radius:12px;margin:20px 0;line-height:1.7}
+.review-card h2{font-size:19px;margin:12px 0}.save-status{padding:16px;background:#e9f2eb;border-radius:8px;font-size:14px}
+.activity{justify-content:space-between}.activity p{color:#586b62;font-size:13px}
+.nav a[aria-current="page"]{border-bottom:2px solid var(--green)}
+@media(max-width:600px){.flow-panel{margin:30px 16px;padding:24px}.practice-shell{padding:24px 20px 60px}.flow-actions .button{flex:1}.page{padding-top:30px}.subject-card ul{min-height:0}}

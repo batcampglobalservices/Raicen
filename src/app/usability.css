@@ -1,0 +1,59 @@
+/* Calm surfaces, readable content, and consistent controls. */
+body { background-image: none; font-family: var(--font-geist-sans), Arial, sans-serif; }
+a, button, textarea, input, summary { -webkit-tap-highlight-color: transparent; }
+:where(a,button,input,textarea,summary):focus-visible { outline: 3px solid #276b54; outline-offset: 4px; }
+button, .nav a, summary { min-height: 44px; }
+.nav a { display: inline-flex; align-items: center; text-decoration: none; color: var(--green); }
+.nav-links { align-items: center; }
+.hero { gap: 40px; min-height: 600px; }
+.hero h1 { font-size: clamp(52px, 6vw, 78px); line-height: 1.02; letter-spacing: -.05em; }
+.hero h1 em { transform: none; }
+.hero-art { box-shadow: 4px 4px 0 var(--green); height: 450px; }
+.hero-actions { flex-wrap: wrap; }
+.subject-card:nth-child(2n) { transform: none; }
+.subject-card { border-radius: 14px; box-shadow: none; }
+.subject-card button { border-radius: 6px; padding: 14px 8px; }
+.page-heading h2 { font-size: clamp(32px, 4vw, 48px); }
+.tutor-shell { padding-top: 30px; }
+.tutor-heading { max-width: 760px; }
+.tutor-heading h1 { font: 500 clamp(32px, 4vw, 46px)/1.15 var(--font-geist-sans), sans-serif; letter-spacing: -.04em; }
+.tutor-heading>p:last-child { max-width: 680px; }
+.notes-disclosure { margin-top: 18px; max-width: 680px; background: #fffdf6; border: 1px solid var(--line); border-radius: 12px; padding: 0 16px; }
+.notes-disclosure summary { cursor: pointer; padding: 13px 0; color: var(--green); font-size: 14px; }
+.notes-disclosure summary span { color: #586b62; font-size: 12px; margin-left: 8px; }
+.notes-disclosure .notes-box { margin-top: 0; }
+.notes-disclosure small { display: block; color: #586b62; padding: 12px 0; font-size: 12px; }
+.tutor-layout { margin-top: 26px; grid-template-columns: 185px minmax(360px, 1fr) 220px; gap: 20px; }
+.topic-choice { padding: 12px 10px; border: 0; border-radius: 8px; color: #4b6257; margin-bottom: 4px; }
+.topic-choice.active { background: #dfede4; box-shadow: inset 3px 0 #276b54; }
+.topic-choice:disabled { opacity: .55; cursor: wait; }
+.chat-card { min-height: 530px; }
+.messages { max-height: 510px; overflow-y: auto; min-height: 290px; }
+.message p { white-space: pre-wrap; font-size: 15px; line-height: 1.75; color: #28493a; }
+.chat-top { flex-wrap: wrap; gap: 8px; }
+.chat-input textarea { width: calc(100% - 82px); min-height: 64px; }
+.send-button { width: 68px; height: 44px; border-radius: 9px; font-size: 13px; font-weight: 600; }
+.chat-input small { color: #586b62; }
+.starter-prompts { margin: 20px 0 8px 42px; display: flex; flex-wrap: wrap; gap: 8px; }
+.starter-prompts p { width: 100%; font-size: 12px; color: #586b62; margin: 0; }
+.starter-prompts button { text-align: left; border: 1px solid #b9cfc0; color: #27583f; background: #f6faf7; border-radius: 9px; padding: 8px 12px; font-size: 12px; }
+.tutor-insights { background: #edf3ed; }
+.readiness strong, .quiz-invite strong { font-size: 14px; }
+.readiness small, .insight-empty, .quiz-invite p { font-size: 13px; line-height: 1.6; color: #4b6257; }
+.tutor-sidebar ol { font-size: 13px; }
+@media(max-width:1050px) { .tutor-layout { grid-template-columns: 180px minmax(0,1fr); } .tutor-insights { grid-column: 2; } }
+@media(max-width:800px) {
+ .nav { height: auto; min-height: 76px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; gap: 8px; }
+ .nav-links { display: flex; order: 3; width: 100%; margin: 0; gap: 22px; border-top: 1px solid var(--line); }
+ .hero { padding-top: 30px; } .hero-art { height: 320px; }
+ .tutor-layout { display: flex; flex-direction: column; }
+ .tutor-sidebar, .chat-card, .tutor-insights { width: 100%; }
+ .tutor-sidebar { display: flex; flex-wrap: wrap; gap: 8px; }
+ .tutor-sidebar>.eyebrow { width: 100%; margin-bottom: 2px; }
+ .topic-choice { width: auto; flex: 1 1 45%; border: 1px solid var(--line); font-size: 12px; }
+ .tutor-sidebar .tutor-rule, .tutor-sidebar ol, .tutor-sidebar>.eyebrow:nth-of-type(2) { display: none; }
+ .chat-card { min-height: 460px; } .messages { padding: 20px 14px; }
+ .class-chip { white-space: normal; } .tutor-insights { display: block; }
+ .starter-prompts { margin-left: 0; } .tutor-heading h1 { font-size: 34px; }
+}
+@media(prefers-reduced-motion:reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }

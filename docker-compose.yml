@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: edulearn
+      POSTGRES_USER: edulearn
+      POSTGRES_PASSWORD: edulearn
+    ports:
+      - "55432:5432"
+    volumes:
+      - edulearn-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U edulearn -d edulearn"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  edulearn-postgres:
