@@ -17,7 +17,7 @@ export default function AccountPage() {
       const response = await fetch("/api/auth/" + mode, { method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(fields) });
       const data = await response.json().catch(() => null);
       if(!response.ok) throw new Error(data?.error ?? "The account service returned an unexpected response. Please try again.");
-      router.push("/progress");
+      router.push("/dashboard");
     } catch(e) { setError(e instanceof Error ? e.message : "Unable to connect. Please try again."); } finally { setBusy(false); }
   }
   return <main><LearningNav /><section className="flow-panel">

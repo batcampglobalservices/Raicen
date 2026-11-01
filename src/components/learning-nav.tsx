@@ -9,6 +9,6 @@ export default function LearningNav() {
   return <nav className="nav shell" aria-label="Main navigation">
     <Link className="brand" href="/"><span className="brand-mark">e</span>edulearn</Link>
     <div className="nav-links">{[["/tutor", "Chat"], ["/progress", "Progress"]].map(([href, label]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}>{label}</Link>)}</div>
-    <Link className="profile-pill" href="/account">{name ? name + " · Account" : "Sign in"}</Link>
+    <Link className="profile-pill" href={name ? "/dashboard" : "/account"}>{name ? name + " · Dashboard" : "Sign in"}</Link>
   </nav>;
 }
