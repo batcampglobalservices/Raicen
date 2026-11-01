@@ -9,14 +9,14 @@ export default function AccountPage() {
   const [checking, setChecking] = useState(true);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
-  useEffect(() => { fetch("/api/auth/me").then(r=>r.json()).then(d=>setUser(d.user)).catch(()=>setError("Unable to check your account. Reload to try again.")).finally(()=>setChecking(false)); }, []);
+  useEffect(() => { fetch("/api/auth/me").then(async r=>{const data=await r.json().catch(()=>null);if(!r.ok)throw Error(data?.error??"Unable to check your account.");setUser(data?.user??null);}).catch(()=>setError("Unable to check your account. Reload to try again.")).finally(()=>setChecking(false)); }, []);
   async function submit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault(); setError(""); setBusy(true);
     const fields = Object.fromEntries(new FormData(event.currentTarget));
     try {
       const response = await fetch("/api/auth/" + mode, { method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify(fields) });
-      const data = await response.json();
-      if(!response.ok) throw new Error(data.error ?? "Unable to continue.");
+      const data = await response.json().catch(() => null);
+      if(!response.ok) throw new Error(data?.error ?? "The account service returned an unexpected response. Please try again.");
       router.push("/progress");
     } catch(e) { setError(e instanceof Error ? e.message : "Unable to connect. Please try again."); } finally { setBusy(false); }
   }
