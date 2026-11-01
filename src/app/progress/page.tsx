@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import LearningNav from "@/components/learning-nav";
 type Attempt = {id:string; topicTitle?:string; topicId:string; score:number; total:number; createdAt:string};
 export function ProgressPage({dashboard=false}:{dashboard?:boolean}) {
@@ -16,4 +17,4 @@ export function ProgressPage({dashboard=false}:{dashboard?:boolean}) {
   </section></main>;
 }
 
-export default function StandaloneProgressPage() { return <ProgressPage />; }
+export default function StandaloneProgressPage() { const router=useRouter(); useEffect(()=>{router.replace("/dashboard/progress");},[router]); return null; }
